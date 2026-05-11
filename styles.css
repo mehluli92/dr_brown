@@ -569,11 +569,12 @@ h1 {
 .site-footer nav {
   display: grid;
   justify-items: end;
-  gap: 9px;
+  gap: 17px;
   text-align: right;
   text-transform: uppercase;
   font-size: 18px;
   line-height: 1;
+  letter-spacing: 0.06em;
 }
 
 .site-footer nav a {
@@ -924,6 +925,203 @@ h1 {
   text-underline-offset: 3px;
 }
 
+.services-hero img {
+  right: 201px;
+  bottom: 61px;
+  width: 151px;
+  height: 286px;
+}
+
+.services-title-section {
+  display: grid;
+  place-items: center;
+  min-height: 304px;
+  background: #fff;
+  text-align: center;
+}
+
+.services-title-section h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.services-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fbf3e8;
+}
+
+.service-tile {
+  position: relative;
+  min-height: 738px;
+}
+
+.service-art {
+  background: #fbf3e8;
+}
+
+.service-art img {
+  position: absolute;
+  width: 168px;
+  height: 320px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.service-art-left img {
+  left: 99px;
+  bottom: 48px;
+}
+
+.service-art-right img {
+  right: 105px;
+  bottom: 44px;
+}
+
+.service-image-tile {
+  display: grid;
+  place-items: center;
+}
+
+.service-image-tile .service-photo {
+  position: static;
+  width: min(425px, 72%);
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.service-copy {
+  display: grid;
+  align-items: center;
+  color: #fff;
+  background: #ac6d50;
+}
+
+.service-copy > div {
+  width: 462px;
+  margin-left: 103px;
+}
+
+.service-copy h2 {
+  margin: 0 0 24px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.service-copy p {
+  margin: 0 0 35px;
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.service-detail-section {
+  min-height: 2406px;
+  padding: 278px 100px 169px;
+  background: #fff;
+}
+
+.service-detail-card {
+  position: relative;
+  width: 1312px;
+  min-height: 1959px;
+  margin: 0 auto;
+  padding: 270px 0 96px;
+  background: #fbf3e8;
+}
+
+.service-detail-copy {
+  width: 854px;
+  margin: 0 auto;
+}
+
+.service-detail-copy h2 {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.service-detail-copy p {
+  margin: 0 0 28px;
+  font-size: 16px;
+  line-height: 1.44;
+}
+
+.service-detail-copy h2 + p {
+  margin-top: 0;
+}
+
+.educational-consulting-hero h1 {
+  max-width: 1120px;
+  font-size: 92px;
+  white-space: nowrap;
+}
+
+.educational-detail-section {
+  min-height: 1650px;
+  padding-top: 278px;
+  padding-bottom: 214px;
+}
+
+.educational-detail-card {
+  min-height: 1124px;
+}
+
+.educational-detail-copy {
+  width: 740px;
+}
+
+.educational-detail-copy p {
+  margin-bottom: 32px;
+}
+
+.educational-detail-copy p:last-of-type {
+  margin-bottom: 0;
+}
+
+.educational-detail-copy ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.44;
+}
+
+.educational-detail-copy li {
+  padding-left: 2px;
+}
+
+.workshops-detail-section {
+  min-height: 1703px;
+  padding-top: 278px;
+  padding-bottom: 175px;
+}
+
+.workshops-detail-card {
+  min-height: 1250px;
+}
+
+.workshops-detail-copy {
+  width: 780px;
+}
+
+.workshops-detail-copy h2 {
+  margin-top: 34px;
+}
+
+.workshops-detail-copy h2:first-child {
+  margin-top: 0;
+}
+
+.workshops-detail-copy p {
+  margin-bottom: 29px;
+}
+
 @media (max-width: 1200px) {
   .site-header,
   .section-grid,
@@ -934,7 +1132,8 @@ h1 {
   .welcome-section,
   .about-bio,
   .philosophy-main,
-  .contact-intro-section {
+  .contact-intro-section,
+  .service-detail-section {
     padding-right: 48px;
     padding-left: 48px;
   }
@@ -1012,6 +1211,23 @@ h1 {
 
   .contact-flower {
     left: 56px;
+  }
+
+  .service-detail-card {
+    width: 100%;
+  }
+
+  .service-detail-copy {
+    width: min(100% - 160px, 854px);
+  }
+
+  .services-hero img {
+    right: 92px;
+  }
+
+  .service-copy > div {
+    width: min(74%, 462px);
+    margin-left: 72px;
   }
 }
 
@@ -1257,6 +1473,68 @@ h1 {
 
   .contact-flower {
     left: calc(50% - 286px);
+  }
+
+  .service-detail-section {
+    min-height: auto;
+    padding-top: 180px;
+    padding-bottom: 100px;
+  }
+
+  .service-detail-card {
+    min-height: auto;
+    padding: 220px 0 84px;
+  }
+
+  .service-detail-copy {
+    width: min(100% - 96px, 760px);
+  }
+
+  .services-hero img {
+    right: 48px;
+    width: 112px;
+    height: auto;
+  }
+
+  .services-title-section {
+    min-height: 230px;
+  }
+
+  .services-title-section h2 {
+    font-size: 52px;
+  }
+
+  .educational-consulting-hero h1 {
+    font-size: 68px;
+  }
+
+  .services-grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .service-tile {
+    min-height: 520px;
+  }
+
+  .service-copy > div {
+    width: min(100% - 96px, 520px);
+    margin: 0 auto;
+  }
+
+  .service-art img {
+    width: 132px;
+    height: auto;
+  }
+
+  .service-image-tile .service-photo {
+    width: min(424px, 72%);
+  }
+
+  .service-art-left img,
+  .service-art-right img {
+    right: 48px;
+    bottom: 54px;
+    left: auto;
   }
 }
 
@@ -1593,6 +1871,76 @@ h1 {
     bottom: 52px;
     width: 112px;
     height: auto;
+  }
+
+  .service-detail-section {
+    padding: 142px 24px 80px;
+  }
+
+  .service-detail-card {
+    padding: 150px 0 54px;
+  }
+
+  .service-detail-card .welcome-arch {
+    width: 190px;
+    height: 126px;
+    top: -63px;
+  }
+
+  .service-detail-card .welcome-flower {
+    top: -34px;
+    width: 58px;
+    height: auto;
+  }
+
+  .service-detail-copy {
+    width: calc(100% - 44px);
+  }
+
+  .services-hero img {
+    right: 28px;
+    bottom: 34px;
+    width: 82px;
+  }
+
+  .services-title-section {
+    min-height: 180px;
+    padding: 0 24px;
+  }
+
+  .services-title-section h2 {
+    font-size: 42px;
+  }
+
+  .educational-consulting-hero h1 {
+    font-size: 38px;
+    white-space: normal;
+  }
+
+  .service-tile {
+    min-height: 430px;
+  }
+
+  .service-copy > div {
+    width: calc(100% - 48px);
+  }
+
+  .service-copy h2 {
+    font-size: 32px;
+  }
+
+  .service-art img {
+    width: 112px;
+  }
+
+  .service-image-tile .service-photo {
+    width: min(330px, 76%);
+  }
+
+  .service-art-left img,
+  .service-art-right img {
+    right: 24px;
+    bottom: 42px;
   }
 
   .site-menu {
