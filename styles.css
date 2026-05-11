@@ -49,6 +49,128 @@ img {
   max-width: 100%;
 }
 
+.ethical-reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, 58px, 0) scale(0.96) rotate(-1deg);
+  transform-origin: 50% 80%;
+  transition:
+    opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.ethical-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1) rotate(0);
+}
+
+.rolling-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.rolling-link__mask {
+  display: block;
+  height: 1em;
+  overflow: hidden;
+}
+
+.rolling-link__track {
+  display: grid;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rolling-link__line {
+  display: block;
+  min-height: 1em;
+}
+
+.rolling-link:hover .rolling-link__track,
+.rolling-link:focus-visible .rolling-link__track {
+  transform: translateY(-50%);
+}
+
+.pop-image {
+  transition:
+    filter 320ms ease,
+    transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.pop-image:hover {
+  filter: saturate(1.08) contrast(1.02);
+  transform: translateY(-10px) rotate(1.5deg) scale(1.035);
+}
+
+.button,
+.header-cta,
+.footer-community,
+.specialty,
+.service-copy {
+  transition:
+    filter 220ms ease,
+    transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.button:hover,
+.header-cta:hover,
+.footer-community:hover {
+  filter: brightness(1.05) saturate(1.05);
+  transform: translateY(-6px) rotate(-1deg) scale(1.025);
+}
+
+.specialty:hover,
+.service-copy:hover {
+  transform: translateY(-10px) rotate(-0.5deg);
+}
+
+@keyframes buoyant-float {
+  0%,
+  100% {
+    transform: translate3d(calc(var(--cursor-x, 0px) * 0.18), calc(var(--cursor-y, 0px) * 0.18), 0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--cursor-x, 0px) * 0.18), calc(-16px + (var(--cursor-y, 0px) * 0.18)), 0) rotate(1.4deg);
+  }
+}
+
+.buoyant-float {
+  animation: buoyant-float 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .ethical-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .rolling-link__track {
+    transform: none !important;
+  }
+}
+
 .site-header {
   position: absolute;
   top: 0;
